@@ -2,29 +2,28 @@
 proxy_addr="http://localhost:8000"
 query_endpoint="/query"
 arg=$1
-case $arg in
--h | --help)
-  echo "Usage: $0 [query]"
-  exit 0
-  ;;
---query | -q)
-  # Create a JSON object with jq
-  shift
-  query="$*"
-  json_object=$(jq -n \
+
+function send_query_to_recoll_proxy() {
+  local query=$1
+  local json_object=$(jq -n \
     --arg query "$1" \
     '{"query": $query}')
+  curl -s -H "Content-Type: application/json" -X GET -d "$json_object" "$proxy_addr$query_endpoint"
+}
 
-  # Print the JSON object
-
-  function send_query_to_recoll_proxy() {
-    curl -s -H "Content-Type: application/json" -X GET -d "$json_object" "$proxy_addr$query_endpoint"
-  }
+case $arg in
+-h | --help)
+script_name=$(basename "$0")
+  echo "Usage: run ./$script_name alone to popup a rofi window to input query
+  run ./$script_name --query <query> to query recoll directly"
+  ;;
+--query | -q)
+  shift
+  query=$@
   options=()
-
-  response=$(send_query_to_recoll_proxy)
-  length=$(echo "$response" | jq 'length')
-  for count in $(seq 0 $length); do
+  response=$(send_query_to_recoll_proxy "$query")
+  length=$(echo "$response" | jq 'length' )
+  for count in $(seq 0 "$length"); do
     url=$(echo "$response" | jq ".[$count].url")
     #    if url = numm break
     if [ "$url" = "null" ]; then
@@ -50,20 +49,22 @@ case $arg in
     snippet=$(printf "%s\n" "${substrings[@]}")
     options+=("URL:<u>$url</u>\nTitle:<b>$title</b>\nSnippet:$snippet\x0f")
   done
-#  execute command after select
+  #  execute command after select
   # shellcheck disable=SC2006
-  seleted=`echo -ne "${options[@]}" | rofi -dmenu -sep "\x0f" -config "/usr/share/rofi/themes/sidebar.rasi" \
-    -eh 7 -markup-rows -p "Recoll"`
+  seleted=$(echo -ne "${options[@]}" | rofi -dmenu -sep "\x0f" -config "/usr/share/rofi/themes/sidebar.rasi" \
+    -eh 7 -markup-rows -p "Recoll")
   if [ -n "$seleted" ]; then
-    selected_url=$(echo "$seleted" | head -n 1| sed 's/<[^>]*>//g'|sed 's/URL://g')
+    selected_url=$(echo "$seleted" | head -n 1 | sed 's/<[^>]*>//g' | sed 's/URL://g')
     notify-send "Opening $selected_url"
-    echo "$selected_url" |xargs -I {} xdg-open {}
+    echo "$selected_url" | xargs -I {} xdg-open {}
   fi
 
   ;;
 
 *)
-  echo "Usage: $0 [query]"
-  exit 0
+  init_query=$(rofi -dmenu )
+  if [ -n "$init_query" ]; then
+    "$0" --query "$init_query"
+  fi
   ;;
 esac
