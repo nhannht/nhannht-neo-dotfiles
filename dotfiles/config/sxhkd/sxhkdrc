@@ -1,0 +1,5 @@
+super + w
+    tdrop  -x 0 -h 90% -ma -s dropdown notion-app
+# reload sxhkd 
+super + shift + alt + r
+    pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'

@@ -1,0 +1,55 @@
+# [[file:.doom.d/dot.org::*IdeaVimrc][IdeaVimrc:1]]
+"" Source your .vimrc
+source ~/.vimrc
+source ~/.config/nvim/init.vim
+"source ~/.intellimacs/spacemacs.vim
+source ~/.intellimacs/extra.vim
+" (Optional) Enable which-key plugin
+"source ~/.intellimacs/which-key.vim
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+imap fd <Esc>
+nmap fd <Esc>
+vmap fd <Esc>
+
+
+" (Optional) Comma for major mode
+"nmap , <leader>m
+"vmap , <leader>m
+
+" (Optional) Add/edit actions
+"nnoremap <leader>gl    :action Vcs.Show.Log<CR>
+"vnoremap <leader>gl    :action Vcs.Show.Log<CR>
+
+" Do incrementa searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+set commentary
+set surround
+" set which-key
+
+set surround
+set argtextobj
+set textobj-entire
+set matchitset ideajoin
+# IdeaVimrc:1 ends here
+set clipboard+=ideaput

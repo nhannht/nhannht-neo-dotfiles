@@ -1,0 +1,9 @@
+# [[file:../../.doom.d/dot.org::*bundle.fish][bundle.fish:1]]
+package bass
+package colored-man-pages
+package foreign-env
+package https://github.com/jorgebucaran/autopair.fish
+package nvm
+package z
+theme default
+# bundle.fish:1 ends here

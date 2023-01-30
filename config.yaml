@@ -1,0 +1,231 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: absolute
+  link_on_import: absolute
+  longkey: false
+  showdiff: true
+  chmod_on_import: true
+  compare_workdir: true
+dotfiles:
+  f_init.vim:
+    src: config/nvim/init.vim
+    dst: ~/.config/nvim/init.vim
+    chmod: '644'
+  f_sxhkdrc:
+    src: config/sxhkd/sxhkdrc
+    dst: ~/.config/sxhkd/sxhkdrc
+    chmod: '644'
+  f_init.fish:
+    src: config/omf/init.fish
+    dst: ~/.config/omf/init.fish
+    chmod: '644'
+  f_bundle:
+    src: config/omf/bundle
+    dst: ~/.config/omf/bundle
+    chmod: '644'
+  f_channel:
+    src: config/omf/channel
+    dst: ~/.config/omf/channel
+    chmod: '644'
+  f_theme:
+    src: config/omf/theme
+    dst: ~/.config/omf/theme
+    chmod: '644'
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+    chmod: '644'
+  f_bash_profile:
+    src: bash_profile
+    dst: ~/.bash_profile
+    chmod: '644'
+  f_config:
+    src: config/i3/config
+    dst: ~/.config/i3/config
+    chmod: '644'
+  f_keybindings:
+    src: config/i3/keybindings
+    dst: ~/.config/i3/keybindings
+    chmod: '644'
+  f_bandwidth2:
+    src: config/i3/scripts/bandwidth2
+    dst: ~/.config/i3/scripts/bandwidth2
+    chmod: '755'
+  f_battery-pinebook-pro:
+    src: config/i3/scripts/battery-pinebook-pro
+    dst: ~/.config/i3/scripts/battery-pinebook-pro
+    chmod: '755'
+  f_battery1:
+    src: config/i3/scripts/battery1
+    dst: ~/.config/i3/scripts/battery1
+    chmod: '755'
+  f_battery2:
+    src: config/i3/scripts/battery2
+    dst: ~/.config/i3/scripts/battery2
+    chmod: '755'
+  f_blur-lock:
+    src: config/i3/scripts/blur-lock
+    dst: ~/.config/i3/scripts/blur-lock
+    chmod: '755'
+  f_cpu_usage:
+    src: config/i3/scripts/cpu_usage
+    dst: ~/.config/i3/scripts/cpu_usage
+    chmod: '755'
+  f_disk:
+    src: config/i3/scripts/disk
+    dst: ~/.config/i3/scripts/disk
+    chmod: '755'
+  f_empty_workspace:
+    src: config/i3/scripts/empty_workspace
+    dst: ~/.config/i3/scripts/empty_workspace
+    chmod: '755'
+  f_keyboard-layout:
+    src: config/i3/scripts/keyboard-layout
+    dst: ~/.config/i3/scripts/keyboard-layout
+    chmod: '755'
+  f_keyhint:
+    src: config/i3/scripts/keyhint
+    dst: ~/.config/i3/scripts/keyhint
+    chmod: '755'
+  f_keyhint-2:
+    src: config/i3/scripts/keyhint-2
+    dst: ~/.config/i3/scripts/keyhint-2
+    chmod: '755'
+  f_memory:
+    src: config/i3/scripts/memory
+    dst: ~/.config/i3/scripts/memory
+    chmod: '755'
+  f_openweather:
+    src: config/i3/scripts/openweather
+    dst: ~/.config/i3/scripts/openweather
+    chmod: '755'
+  f_openweather-city:
+    src: config/i3/scripts/openweather-city
+    dst: ~/.config/i3/scripts/openweather-city
+    chmod: '755'
+  f_openweather.conf:
+    src: config/i3/scripts/openweather.conf
+    dst: ~/.config/i3/scripts/openweather.conf
+    chmod: '755'
+  f_power-profiles:
+    src: config/i3/scripts/power-profiles
+    dst: ~/.config/i3/scripts/power-profiles
+    chmod: '755'
+  f_powermenu:
+    src: config/i3/scripts/powermenu
+    dst: ~/.config/i3/scripts/powermenu
+    chmod: '755'
+  f_temperature:
+    src: config/i3/scripts/temperature
+    dst: ~/.config/i3/scripts/temperature
+    chmod: '755'
+  f_volume:
+    src: config/i3/scripts/volume
+    dst: ~/.config/i3/scripts/volume
+    chmod: '755'
+  f_vpn:
+    src: config/i3/scripts/vpn
+    dst: ~/.config/i3/scripts/vpn
+    chmod: '755'
+  f_ppd-status:
+    src: config/i3/scripts/ppd-status
+    dst: ~/.config/i3/scripts/ppd-status
+    chmod: '755'
+  f_tmux.conf:
+    src: tmux.conf
+    dst: ~/.tmux.conf
+    chmod: '644'
+  f_tmux.conf.local:
+    src: tmux.conf.local
+    dst: ~/.tmux.conf.local
+    chmod: '644'
+  f_ideavimrc:
+    src: ideavimrc
+    dst: ~/.ideavimrc
+    chmod: '644'
+  f_w3m_config:
+    src: w3m/config
+    dst: ~/.w3m/config
+    chmod: '644'
+  f_kitty.conf:
+    src: config/kitty/kitty.conf
+    dst: ~/.config/kitty/kitty.conf
+    chmod: '644'
+  f_vifmrc:
+    src: config/vifm/vifmrc
+    dst: ~/.config/vifm/vifmrc
+    chmod: '644'
+  f_xonshrc:
+    src: xonshrc
+    dst: ~/.xonshrc
+    chmod: '644'
+  f_dot.org:
+    src: doom.d/dot.org
+    dst: ~/.doom.d/dot.org
+    chmod: '644'
+  f_scratch.el:
+    src: org-one/scratch.el
+    dst: ~/org-one/scratch.el
+    chmod: '644'
+  f_profile:
+    src: profile
+    dst: ~/.profile
+    chmod: '644'
+  f_main.sh:
+    src: nhannht_scripts/main.sh
+    dst: ~/.nhannht_scripts/main.sh
+    chmod: '755'
+  f_hey.sh:
+    src: nhannht_scripts/hey.sh
+    dst: ~/.nhannht_scripts/hey.sh
+    chmod: '755'
+profiles:
+  vermin-x510ua:
+    dotfiles:
+    - f_init.vim
+    - f_sxhkdrc
+    - f_init.fish
+    - f_bundle
+    - f_channel
+    - f_theme
+    - f_bashrc
+    - f_bash_profile
+    - f_config
+    - f_keybindings
+    - f_bandwidth2
+    - f_battery-pinebook-pro
+    - f_battery1
+    - f_battery2
+    - f_blur-lock
+    - f_cpu_usage
+    - f_disk
+    - f_empty_workspace
+    - f_keyboard-layout
+    - f_keyhint
+    - f_keyhint-2
+    - f_memory
+    - f_openweather
+    - f_openweather-city
+    - f_openweather.conf
+    - f_power-profiles
+    - f_powermenu
+    - f_temperature
+    - f_volume
+    - f_vpn
+    - f_ppd-status
+    - f_tmux.conf
+    - f_tmux.conf.local
+    - f_ideavimrc
+    - f_w3m_config
+    - f_kitty.conf
+    - f_vifmrc
+    - f_xonshrc
+    - f_dot.org
+    - f_scratch.el
+    - f_profile
+    - f_main.sh
+    - f_hey.sh

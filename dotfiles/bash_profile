@@ -1,0 +1,71 @@
+# [[file:.doom.d/dot.org::*.bash_profile][.bash_profile:1]]
+alias vim=nvim
+export PATH=$HOME/.local/bin/:$PATH
+export PATH=$HOME/bin/:$PATH
+export PATH=$HOME/go/bin/:$PATH
+export PATH=$HOME/.local/bin/:$PATH
+# export PATH=/usr/lib/jvm/java-11-openjdk/bin/:$PATH
+# export PATH=$HOME/math/Executables/:$PATH
+export PATH=$HOME/.emacs.d/bin/:$PATH
+export PATH=$HOME/script/:$PATH
+export PATH=$HOME/.nhannht_scripts/:$PATH
+export PATH=$HOME/nhannht-neo-dotfiles/dotfiles/nhannht_scripts/:$PATH
+# export PATH=/usr/lib/jvm/java-11-graalvm/bin/:$PATH
+export PATH=$HOME/.deta/bin/:$PATH
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+alias e="emacsclient -n"
+alias ew="emacsclient -nw"
+alias ec="emacsclient -nc"
+alias m="mathematica -sl "
+
+# function vterm_printf(){
+#     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
+#         # Tell tmux to pass the escape sequences through
+#         printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+#     elif [ "${TERM%%-*}" = "screen" ]; then
+#         # GNU screen (screen, screen-256color, screen-256color-bce)
+#         printf "\eP\e]%s\007\e\\" "$1"
+#     else
+#         printf "\e]%s\e\\" "$1"
+#     fi
+# }
+
+# # Sync directory and host in the shell with Emacs's current directory.
+# # You may need to manually specify the hostname instead of $(hostname) in case
+# # $(hostname) does not return the correct string to connect to the server.
+# #
+# # The escape sequence "51;A" has also the role of identifying the end of the
+# # prompt
+# vterm_prompt_end(){
+#     vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
+# }
+# PS1=$PS1'\[$(vterm_prompt_end)\]'
+# source /usr/share/nvm/init-nvm.sh
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
+source /usr/share/nvm/init-nvm.sh 
+
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# source  $(brew --prefix asdf)/libexec/asdf.sh
+# source $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
+
+
+# Restart your shell for the changes to take effect.
+export PATH="/home/linuxbrew/.linuxbrew/opt/python@3.8/bin:$PATH"
+export LDFLAGS="-L/home/linuxbrew/.linuxbrew/opt/python@3.8/lib"
+export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/python@3.8/include"
+export PKG_CONFIG_PATH="/home/linuxbrew/.linuxbrew/opt/python@3.8/lib/pkgconfig"
+export PATH="/home/vermin/.gem/ruby/3.0.0/bin:$PATH"
+c=1
+# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+# .bash_profile:1 ends here

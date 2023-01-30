@@ -1,0 +1,8 @@
+# [[file:.doom.d/dot.org::*Xonsh][Xonsh:1]]
+# XONSH WEBCONFIG START
+xontrib load bashisms
+execx($(/usr/bin/starship init xonsh --print-full-init))
+# XONSH WEBCONFIG END
+xontrib load kitty
+xontrib load z
+# Xonsh:1 ends here
